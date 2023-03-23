@@ -5,6 +5,7 @@ const button = document.querySelector('button')
 const div = document.querySelector('div')
 
 const enterInput = (event) => {
+
     event.preventDefault()
     let list = document.createElement('ul')
     let listItem = document.createElement('li')
