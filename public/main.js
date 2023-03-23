@@ -1,8 +1,9 @@
 
 
 const input = document.querySelector('input')
-const button = document.querySelector('button')
+const beepBtn = document.getElementsByClassName('beep')
 const div = document.querySelector('div')
+const puppyBtn = document.getElementsByClassName('puppy')
 
 const enterInput = (event) => {
 
@@ -15,4 +16,14 @@ const enterInput = (event) => {
     input.value = ''
 }
 
-button.addEventListener('click', enterInput)
+beepBtn.addEventListener('click', enterInput)
+
+const getPuppy = () => {
+    console.log('beep')
+    axios.get('http://localhost:4000/puppy')
+        .then(res => {
+            div.appendChild(`<img src="${res.data} />`)
+        })
+}
+
+puppyBtn.onclick(() => getPuppy)
